@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JournaLive &mdash; Your Digital Journal Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="container">
+        <a class="brand" href="#home">JournaLive</a>
+        <nav class="nav-links" aria-label="primary">
+          <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-menu">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#latest">Latest entries</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <button class="btn btn-outline" type="button">Sign in</button>
+          <button class="btn btn-primary" type="button">Start writing</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="sun" aria-hidden="true">☀️</span>
+            <span class="moon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Daily journaling made delightful</span>
+            <h1>Capture thoughts that matter, reflect with intention.</h1>
+            <p>
+              JournaLive is your creative space for mindful writing. Organize ideas, track mood trends,
+              and build a consistent practice with prompts, rituals, and guided reflections designed by
+              psychologists and storytellers.
+            </p>
+            <form class="hero-form" aria-label="Get early access">
+              <label class="visually-hidden" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+              <button type="submit" class="btn btn-primary">Request invite</button>
+            </form>
+            <div class="hero-metrics">
+              <div>
+                <span class="metric">98%</span>
+                <span class="metric-label">Feel more focused</span>
+              </div>
+              <div>
+                <span class="metric">100k+</span>
+                <span class="metric-label">Entries created</span>
+              </div>
+              <div>
+                <span class="metric">4.9/5</span>
+                <span class="metric-label">Average rating</span>
+              </div>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Journey preview">
+            <article class="preview-card">
+              <header>
+                <h2>Morning reflection</h2>
+                <time datetime="2024-05-14">May 14</time>
+              </header>
+              <p>
+                Today I am focusing on intention, letting curiosity guide my decisions and taking time to
+                celebrate small wins along the way.
+              </p>
+              <ul class="tags">
+                <li>Gratitude</li>
+                <li>Mindfulness</li>
+              </ul>
+              <footer>
+                <button class="btn btn-outline" type="button">Continue writing</button>
+              </footer>
+            </article>
+            <div class="panel-footer">
+              <h3>Track your mood</h3>
+              <p>Visualize patterns and receive insights tailored to your writing rhythms.</p>
+              <img src="assets/img/mood-chart.svg" alt="Mood tracking chart" />
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="features" class="section features">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Features</span>
+            <h2>Craft your story with powerful tools</h2>
+            <p>
+              A flexible canvas for every kind of writer. Create entries, track goals, and transform daily
+              reflections into personal growth.
+            </p>
+          </header>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">📝</div>
+              <h3>Guided prompts</h3>
+              <p>Choose from research-backed prompts or design your own to spark creativity every day.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">📈</div>
+              <h3>Insight analytics</h3>
+              <p>Discover mood trends, writing streaks, and themes that bring your reflections to life.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">🔒</div>
+              <h3>Private &amp; secure</h3>
+              <p>Your writing stays yours with end-to-end encryption and secure cloud backups.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon" aria-hidden="true">🤝</div>
+              <h3>Community circles</h3>
+              <p>Share entries selectively, exchange feedback, and grow with trusted friends or mentors.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="latest" class="section latest">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Live feed</span>
+            <h2>Latest journal highlights</h2>
+            <p>Moments our writers recently captured. Filter by mood to discover your next prompt.</p>
+            <div class="filter-group" role="radiogroup" aria-label="Filter entries by mood">
+              <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter-btn" data-filter="joy">Joy</button>
+              <button class="filter-btn" data-filter="focus">Focus</button>
+              <button class="filter-btn" data-filter="calm">Calm</button>
+              <button class="filter-btn" data-filter="gratitude">Gratitude</button>
+            </div>
+          </header>
+          <div class="card-grid" id="entry-grid"></div>
+        </div>
+      </section>
+
+      <section class="section experience">
+        <div class="container experience-grid">
+          <div class="experience-copy">
+            <span class="eyebrow">Your ritual, everywhere</span>
+            <h2>Stay in flow across devices</h2>
+            <p>
+              JournaLive automatically syncs your writing so you can start on your phone, add details on
+              your tablet, and polish entries on your laptop. Offline support keeps you writing without
+              interruptions.
+            </p>
+            <ul class="benefits">
+              <li>Optimized for mobile, tablet, and desktop</li>
+              <li>Auto-save with version history</li>
+              <li>Daily streak reminders via gentle nudges</li>
+              <li>Export to PDF, Markdown, and Notion</li>
+            </ul>
+          </div>
+          <div class="device-mockup" aria-hidden="true">
+            <div class="tablet">
+              <div class="screen">
+                <span class="screen-title">Evening gratitude</span>
+                <p>Highlight three moments you appreciated today &mdash; why did they matter?</p>
+                <div class="chips">
+                  <span>Relationships</span>
+                  <span>Wellness</span>
+                  <span>Creativity</span>
+                </div>
+              </div>
+            </div>
+            <div class="phone">
+              <div class="screen">
+                <span class="screen-title">Mood check-in</span>
+                <ul>
+                  <li>Motivated</li>
+                  <li>Grateful</li>
+                  <li>Inspired</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="membership" class="section membership">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">Pricing</span>
+            <h2>Choose a plan that evolves with you</h2>
+            <p>Monthly and annual options that scale with your journaling journey.</p>
+          </header>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <h3>Starter</h3>
+              <p class="price">Free</p>
+              <ul>
+                <li>Unlimited entries</li>
+                <li>Daily prompts</li>
+                <li>Sync across devices</li>
+                <li>Export to PDF</li>
+              </ul>
+              <button class="btn btn-outline" type="button">Get started</button>
+            </article>
+            <article class="pricing-card popular">
+              <div class="badge">Popular</div>
+              <h3>Pro</h3>
+              <p class="price">$9<span>/mo</span></p>
+              <ul>
+                <li>Everything in Starter</li>
+                <li>Mood analytics dashboard</li>
+                <li>Community circles</li>
+                <li>Voice journaling</li>
+              </ul>
+              <button class="btn btn-primary" type="button">Start free trial</button>
+            </article>
+            <article class="pricing-card">
+              <h3>Studio</h3>
+              <p class="price">$19<span>/mo</span></p>
+              <ul>
+                <li>Advanced insights &amp; AI summary</li>
+                <li>Custom branding</li>
+                <li>Unlimited collaborators</li>
+                <li>Priority support</li>
+              </ul>
+              <button class="btn btn-outline" type="button">Talk to us</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories" class="section stories">
+        <div class="container stories-grid">
+          <div class="stories-intro">
+            <span class="eyebrow">Community</span>
+            <h2>Writers who journal with JournaLive</h2>
+            <p>
+              See how creatives, founders, and wellness leaders maintain clarity by documenting their
+              journey.
+            </p>
+            <div class="avatars" aria-hidden="true">
+              <img src="https://i.pravatar.cc/64?img=12" alt="" />
+              <img src="https://i.pravatar.cc/64?img=24" alt="" />
+              <img src="https://i.pravatar.cc/64?img=33" alt="" />
+              <img src="https://i.pravatar.cc/64?img=45" alt="" />
+            </div>
+          </div>
+          <div class="story-cards">
+            <article class="story-card">
+              <blockquote>
+                &ldquo;JournaLive is where I untangle ideas before a product launch. The prompts keep me honest
+                about my priorities.&rdquo;
+              </blockquote>
+              <footer>
+                <img src="https://i.pravatar.cc/56?img=7" alt="Portrait of Samira" />
+                <div>
+                  <strong>Samira Patel</strong>
+                  <span>Founder, Moonlight Labs</span>
+                </div>
+              </footer>
+            </article>
+            <article class="story-card">
+              <blockquote>
+                &ldquo;I started journaling for mental clarity, now it's a non-negotiable ritual I look forward
+                to every night.&rdquo;
+              </blockquote>
+              <footer>
+                <img src="https://i.pravatar.cc/56?img=17" alt="Portrait of Marcus" />
+                <div>
+                  <strong>Marcus Lee</strong>
+                  <span>Yoga Instructor</span>
+                </div>
+              </footer>
+            </article>
+            <article class="story-card">
+              <blockquote>
+                &ldquo;The mood analytics help me see progress I used to miss. It makes reflection feel like a
+                celebration.&rdquo;
+              </blockquote>
+              <footer>
+                <img src="https://i.pravatar.cc/56?img=29" alt="Portrait of Alina" />
+                <div>
+                  <strong>Alina Ortiz</strong>
+                  <span>Illustrator</span>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq">
+        <div class="container">
+          <header class="section-header">
+            <span class="eyebrow">FAQ</span>
+            <h2>Frequently asked questions</h2>
+            <p>Answers to common questions about your new favorite journaling studio.</p>
+          </header>
+          <div class="accordion" role="tablist"></div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div class="container cta-box">
+          <div>
+            <h2>Write your next chapter today</h2>
+            <p>
+              Start a 7-day free trial and explore guided prompts, community support, and personal insights
+              tailored to your journey.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <button class="btn btn-primary" type="button">Start free trial</button>
+            <button class="btn btn-outline" type="button">Book a demo</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#home">JournaLive</a>
+          <p>Mindful journaling for creators, founders, and lifelong learners.</p>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#membership">Pricing</a></li>
+            <li><a href="#stories">Community</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stay in touch</h3>
+          <form class="footer-form">
+            <label class="visually-hidden" for="footer-email">Email</label>
+            <input type="email" id="footer-email" placeholder="hello@you.com" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <div class="social">
+            <a href="#" aria-label="Instagram"><span aria-hidden="true">IG</span></a>
+            <a href="#" aria-label="Twitter"><span aria-hidden="true">TW</span></a>
+            <a href="#" aria-label="YouTube"><span aria-hidden="true">YT</span></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-bottom">© <span id="year"></span> JournaLive. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
